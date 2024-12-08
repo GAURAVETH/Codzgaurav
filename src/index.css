@@ -39,6 +39,12 @@ body {
 }
 
 @layer utilities {
+
+  .skills-gradient {
+    @apply bg-gradient-to-r from-transparent via-black to-transparent;
+    background-image: linear-gradient(to right, #dfdff0 200%, #dfdff0 -10%, #dfdff0 90%, #dfdff0);
+  }
+
   .border-hsla {
     @apply border border-white/20;
   }
