@@ -37,7 +37,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <div className="mt-20 p-16 md:px-24 lg:px-40 ">
+    <div className="mt-20 py-16 px-5 md:p-16 md:px-24 lg:px-40 ">
       <Header eyebrow="Happy Client" title="What Clients Say about Me" description=" Don't just take my word for it. See what my clients have to say about my work." />
       <div
         className="mt-12 lg:mt-20 flex overflow-x-clip"
@@ -52,7 +52,7 @@ const Testimonial = () => {
                 {testimonials.map((testimonial) => (
                   <Card
                     key={testimonial.name}
-                    className="max-w-sm md:max-w-md md:p-8 hover:-rotate-3 transition duration-500 transform"
+                    className="max-w-xs md:max-w-md md:p-8 hover:-rotate-3 transition duration-500 transform"
                   >
                     <div className="flex gap-4 items-center">
                       <div className="size-14 bg-gray-700 inline-flex rounded-full items-center justify-center flex-shrink-0">
