@@ -24,7 +24,7 @@ const Skills = () => {
                         containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
                     />
                     <div className='py-16'>
-                        <div className='bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip rotate-3 -mx-1'>
+                        <div className='bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip rotate-3 sm:rotate-12 -mx-1'>
                             <div className='flex [mask-image:linear-gradient(to_right, transparent, black_10%, black_90%, trasnparent)]'
                                 style={{
                                     maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -47,7 +47,7 @@ const Skills = () => {
                     </div>
 
                     <div className='m-[-100px]'>
-                        <div className='bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip -rotate-3 -mx-1'>
+                        <div className='bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip sm:[-rotate-12] -rotate-3 -mx-1'>
                             <div className='flex [mask-image:linear-gradient(to_right, transparent, black_10%, black_90%, trasnparent)]'
                                 style={{
                                     maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
