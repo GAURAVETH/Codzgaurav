@@ -31,10 +31,9 @@ const About = () => {
                 <h2 className='font-general text-sm uppercase md:text-[10px]'>
                     Welcome to Codzgaurav
                 </h2>
-                <AnimatedTitle title=" Lorem ipsum dolor sit amet consectetur adipisicing elit." containerClass="mt-5 !text-black text-center" />
+                <AnimatedTitle title="Full Stack Developer" containerClass="mt-5 !text-black text-center" />
                 <div className='about-subtext'>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>To enhance my professional skills, capabilities and knowledge in an organization which recognizes the value of hard work and trusts me with responsibilities and challenges.</p>
                 </div>
             </div>
             <div className='h-dvh w-screen' id="clip">

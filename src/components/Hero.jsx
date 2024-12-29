@@ -84,14 +84,14 @@ const Hero = () => {
 
 
     return (
-        <div className='relative h-dvh w-screen overflow-x-hidden'>
+        <div id="home" className='relative h-dvh w-screen overflow-x-hidden'>
             {isLoading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
                     <div className="three-body">
-                        <div className="three-body__dot"/>
-                        <div className="three-body__dot"/>
-                        <div className="three-body__dot"/>
+                        <div className="three-body__dot" />
+                        <div className="three-body__dot" />
+                        <div className="three-body__dot" />
                     </div>
                 </div>
             )}
@@ -139,10 +139,13 @@ const Hero = () => {
                     <div className="mt-24 px-5 sm:px-10">
                         <h1 className="special-font hero-heading text-blue-100"> W<b>e</b>b</h1>
                         <p className='mb-5 max-w-64 font-robert-regular text-blue-100'>
-                            Lorem ipsum dolor sit amet.
+                            Full Stack Developer
                         </p>
-                        <Button id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow />}
-                            containerClass="!bg-yellow-300 flex-center gap-1" />
+                        <a href="#contact">
+                            <Button title="Contack us" leftIcon={<TiLocationArrow />}
+                                containerClass="!bg-yellow-300 flex-center gap-1" />
+                        </a>
+
                     </div>
                 </div>
             </div>

@@ -2,8 +2,9 @@ import React from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
 import Navbar from './components/Navbar'
-import Features from './components/Features'
+import Projects from './components/Projects'
 import Skills from './components/Skills'
+import Testimonial from './components/Testimonial'
 
 const App = () => {
   return (
@@ -11,8 +12,9 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
-      <Features />
+      <Projects />
       <Skills />
+      <Testimonial className="container" />
     </main>
   )
 }
