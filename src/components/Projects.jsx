@@ -167,7 +167,7 @@ const Projects = () => (
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
         <p className="font-circular-web text-lg text-blue-50">
-          Into My Projects
+          Introuduce My Projects
         </p>
         <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
         Project successfully completed, showcasing my skills in [technologies used, e.g., MERN stack, React, TailwindCSS], with features like [key features, e.g., real-time chat, user authentication, feedback collection]. Looking forward to the next challenge!

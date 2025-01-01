@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Testimonial from './components/Testimonial'
+import BackToTop from './components/BackToTop'
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       <About />
       <Projects />
       <Skills />
-      <Testimonial className="container" />
+      <Testimonial />
+      <BackToTop />
     </main>
   )
 }
