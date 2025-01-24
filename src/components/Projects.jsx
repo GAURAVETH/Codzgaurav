@@ -81,7 +81,7 @@ export const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description, isComingSoon, isLive }) => {
+export const BentoCard = ({ src, title, description, isComingSoon, isLive, href }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
@@ -138,7 +138,9 @@ export const BentoCard = ({ src, title, description, isComingSoon, isLive }) => 
         )}
 
         {isLive && (
-          <div
+          <a
+            href={href}
+            target="_blank"
             ref={hoverButtonRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
@@ -154,8 +156,8 @@ export const BentoCard = ({ src, title, description, isComingSoon, isLive }) => 
               }}
             />
             <TiLocationArrow className="relative z-20" />
-            <p href='' className="relative z-20">Live</p>
-          </div>
+            <p className="relative z-20">Live</p>
+          </a>
         )}
       </div>
     </div>
@@ -183,13 +185,14 @@ const Projects = () => (
         />
       </BentoTilt>
 
-      <div className="grid h-[95vh] w-full grid-cols-2 gap-7">
+      <div className="grid min-h-96 w-full grid-cols-2 gap-7">
         <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
           <BentoCard
             src="img/feature-2.png"
             title={<>Realtime Chat Application</>}
             description="This real-time chat application is built with modern web development technologies, focusing on user experience, performance, and reliability. It enables users to communicate seamlessly with real-time messaging features and intuitive UI components."
             isLive
+            href="https://chat-application-de2t.onrender.com/"
           />
         </BentoTilt>
 

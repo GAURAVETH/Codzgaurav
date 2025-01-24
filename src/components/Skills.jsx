@@ -47,7 +47,7 @@ const Skills = () => {
                     </div>
 
                     <div className='m-[-100px]'>
-                        <div className='bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip sm:[-rotate-12] -rotate-3 -mx-1'>
+                        <div className='bg-gradient-to-r from-emerald-300 to-sky-400 overflow-x-clip -rotate-3 -mx-1'>
                             <div className='flex [mask-image:linear-gradient(to_right, transparent, black_10%, black_90%, trasnparent)]'
                                 style={{
                                     maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
