@@ -8,10 +8,12 @@ import Testimonial from './components/Testimonial'
 import BackToTop from './components/BackToTop'
 import Footer from './components/Footer'
 import Contact from './components/Contact'
+import CharacterCursor from './components/CharacterCursor'
 
 const App = () => {
   return (
     <main className='relative min-h-screen w-screen overflow-x-hidden'>
+      <CharacterCursor />
       <Navbar />
       <Hero />
       <About />
