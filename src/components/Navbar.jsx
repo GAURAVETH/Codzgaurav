@@ -8,7 +8,7 @@ import HoverSoundLink from './HoverSoundLink.jsx';
 const navItems = ['Home', 'About', 'Skills', 'Contact'];
 
 const Navbar = () => {
-    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+    const [isAudioPlaying, setIsAudioPlaying] = useState(true);
     const [isIndicatorActive, setIsIndicatorActive] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isNavVisible, setIsNavVisible] = useState(true);
@@ -105,7 +105,7 @@ const Navbar = () => {
                                 <div
                                     key={bar}
                                     className={`indicator-line ${
-                                        isIndicatorActive ? 'active' : ''
+                                        isIndicatorActive ? '' : 'active'
                                     }`}
                                     style={{ animationDelay: `${bar * 0.1}s` }}
                                 />
