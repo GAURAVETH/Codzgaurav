@@ -3,6 +3,7 @@ import { useWindowScroll } from 'react-use';
 import { TiLocationArrow } from 'react-icons/ti';
 import Button from './Button.jsx';
 import gsap from 'gsap';
+import HoverSoundLink from './HoverSoundLink.jsx';
 
 const navItems = ['Home', 'About', 'Skills', 'Contact'];
 
@@ -80,13 +81,13 @@ const Navbar = () => {
                     <div className="flex h-full items-center">
                         <div className="hidden md:block">
                             {navItems.map((item) => (
-                                <a
+                                <HoverSoundLink
+                                    text={item}
                                     key={item}
                                     href={`#${item.toLowerCase()}`}
                                     className="nav-hover-btn"
-                                >
-                                    {item}
-                                </a>
+                                />
+                                    
                             ))}
                         </div>
 
