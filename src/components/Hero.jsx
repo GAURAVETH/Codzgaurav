@@ -142,7 +142,7 @@ const Hero = () => {
                             Full Stack Developer
                         </p>
                         <a href="#contact">
-                            <Button title="Contack us" leftIcon={<TiLocationArrow />}
+                            <Button title="Contact us" leftIcon={<TiLocationArrow />}
                                 containerClass="!bg-yellow-300 flex-center gap-1" />
                         </a>
 
