@@ -26,7 +26,7 @@ const Form = () => {
                 </div>
                 <div className="mb-6">
                     <textarea
-                        placeholder="Phone"
+                        placeholder="Message"
                         className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         rows="4"
                     ></textarea>
