@@ -181,7 +181,8 @@ const Projects = () => (
           src="img/feature-1.png"
           title={<>Dona<b>t</b>e</>}
           description="The Unused Donation Items Platform is a web application designed to help NGOs efficiently manage and distribute unused donation items. Built with the MERN stack and styled using Tailwind CSS, the platform offers a responsive and user-friendly interface tailored for seamless functionality."
-          isComingSoon
+          isLive
+          href="https://unused-items-donation-platform-for-ngos.onrender.com/"
         />
       </BentoTilt>
 
