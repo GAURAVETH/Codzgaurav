@@ -31,7 +31,7 @@ const Form = () => {
 
     return (
         <div className="w-full max-w-md">
-            <form ref={form} onSubmit={sendEmail} className="bg-white p-6 rounded-lg shadow-md">
+            <form ref={form} onSubmit={sendEmail}>
                 <div className="mb-4">
                     <input
                         type="text"
