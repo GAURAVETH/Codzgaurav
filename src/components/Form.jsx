@@ -1,4 +1,3 @@
-import React from 'react'
 import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
 
