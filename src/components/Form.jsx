@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import Button from "./Button";
-import emailjs from "emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
     const form = useRef();
