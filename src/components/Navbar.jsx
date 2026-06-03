@@ -69,13 +69,13 @@ const Navbar = () => {
                     <div className="flex items-center gap-7">
                         <img src="/img/logo.png" alt="logo" className="w-10" />
                         <a href='#project'>
-                        <Button
-                            id="product-button"
-                            title="Projects"
-                            rightIcon={<TiLocationArrow />}
-                            containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
-                          
-                        />
+                            <Button
+                                id="product-button"
+                                title="Projects"
+                                rightIcon={<TiLocationArrow />}
+                                containerClass="bg-blue-50 md:flex hidden items-center justify-center gap-1"
+
+                            />
                         </a>
                     </div>
                     <div className="flex h-full items-center">
@@ -87,7 +87,7 @@ const Navbar = () => {
                                     href={`#${item.toLowerCase()}`}
                                     className="nav-hover-btn"
                                 />
-                                    
+
                             ))}
                         </div>
 
@@ -104,9 +104,8 @@ const Navbar = () => {
                             {[1, 2, 3].map((bar) => (
                                 <div
                                     key={bar}
-                                    className={`indicator-line ${
-                                        isIndicatorActive ? 'active' : ''
-                                    }`}
+                                    className={`indicator-line ${isIndicatorActive ? '' : 'active'
+                                        }`}
                                     style={{ animationDelay: `${bar * 0.1}s` }}
                                 />
                             ))}
