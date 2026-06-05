@@ -8,7 +8,7 @@ import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// --- UPGRADED: 3D Tilt, Stretch & Curved Radius Wrapper ---
+// --- 3D Tilt, Stretch & Curved Radius Wrapper ---
 const MiniVideoTilt = ({ children, onClick }) => {
     const [transformStyle, setTransformStyle] = useState("");
     const itemRef = useRef(null);
@@ -18,29 +18,25 @@ const MiniVideoTilt = ({ children, onClick }) => {
 
         const { left, top, width, height } = itemRef.current.getBoundingClientRect();
 
-        // Get coordinates mapped from -0.5 (left/top edge) to 0.5 (right/bottom edge)
         const xPos = (event.clientX - left) / width - 0.5;
         const yPos = (event.clientY - top) / height - 0.5;
 
-        // 1. Tilt Effect
         const tiltX = yPos * 30;
         const tiltY = xPos * -30;
 
-        // 2. Pull Effect
         const moveX = xPos * 40;
         const moveY = yPos * 40;
 
-        // 3. Stretch Effect
         const stretchX = 1 + Math.abs(xPos) * 0.25;
         const stretchY = 1 + Math.abs(yPos) * 0.25;
 
         const newTransform = `
-      perspective(700px) 
-      translate(${moveX}px, ${moveY}px) 
-      rotateX(${tiltX}deg) 
-      rotateY(${tiltY}deg) 
-      scale3d(${stretchX}, ${stretchY}, 1.05)
-    `;
+          perspective(700px) 
+          translate(${moveX}px, ${moveY}px) 
+          rotateX(${tiltX}deg) 
+          rotateY(${tiltY}deg) 
+          scale3d(${stretchX}, ${stretchY}, 1.05)
+        `;
 
         setTransformStyle(newTransform);
     };
@@ -55,7 +51,6 @@ const MiniVideoTilt = ({ children, onClick }) => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={onClick}
-            // CHANGED: Replaced rounded-lg with rounded-3xl for smooth, curved edges!
             className="size-full cursor-pointer overflow-hidden rounded-3xl shadow-2xl"
             style={{
                 transform: transformStyle,
@@ -69,6 +64,26 @@ const MiniVideoTilt = ({ children, onClick }) => {
     );
 };
 
+// --- DATA STRUCTURE FOR DYNAMIC TEXT ---
+// Maps each video index to its respective text variants
+const HERO_CONTENT = {
+    1: {
+        topText: <>W<b>e</b>b</>,
+        bottomText: <>Develop<b>e</b>r</>,
+        subText: "Full Stack Developer",
+    },
+    2: {
+        topText: <>Clo<b>u</b>d</>,
+        bottomText: <>Engine<b>e</b>r</>,
+        subText: "Cloud Solutions Architect",
+    },
+    3: {
+        topText: <>Dev<b>O</b>ps</>,
+        bottomText: <>Engine<b>e</b>r</>,
+        subText: "CI/CD & Infrastructure Specialist",
+    },
+};
+
 // --- MAIN HERO COMPONENT ---
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(1);
@@ -78,7 +93,6 @@ const Hero = () => {
 
     const totalVideos = 3;
 
-    // Note: Separated the refs so React knows exactly which video to play
     const currentVideoRef = useRef(null);
     const nextVideoRef = useRef(null);
 
@@ -123,6 +137,15 @@ const Hero = () => {
                     ease: "power1.inOut",
                     force3D: true,
                 });
+                
+                // OPTIONAL: Smooth text entry animation on change
+                gsap.from(".hero-heading, .hero-subtext", {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
             }
         },
         { dependencies: [currentIndex], revertOnUpdate: true }
@@ -151,6 +174,9 @@ const Hero = () => {
 
     const getVideoSrc = (index) => `videos/heros-${index}.mp4`;
 
+    // Grab the text for the currently active video index
+    const currentText = HERO_CONTENT[currentIndex] || HERO_CONTENT[1];
+
     return (
         <div id="home" className="relative h-dvh w-full overflow-x-hidden">
 
@@ -170,11 +196,9 @@ const Hero = () => {
                 style={{ willChange: "clip-path, border-radius, transform" }}
             >
                 <div>
-                    {/* --- UPDATED: Mini Video Trigger Container with 3D Tilt --- */}
+                    {/* Mini Video Trigger Container with 3D Tilt */}
                     <div className="mask-clip-path absolute-center absolute z-50 size-64 overflow-visible">
-                        {/* Outer div handles Tailwind scaling & opacity */}
                         <div className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100 size-full">
-                            {/* Inner component handles 3D Mouse Tracking */}
                             <MiniVideoTilt onClick={handleMiniVdClick}>
                                 <video
                                     ref={currentVideoRef}
@@ -219,17 +243,20 @@ const Hero = () => {
                     />
                 </div>
 
+                {/* DYNAMIC TEXT: Foreground Bottom Heading */}
                 <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75 drop-shadow-md">
-                    Develop<b>e</b>r
+                    {currentText.bottomText}
                 </h1>
 
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
+                        {/* DYNAMIC TEXT: Foreground Top Heading */}
                         <h1 className="special-font hero-heading text-blue-100 drop-shadow-md">
-                            W<b>e</b>b
+                            {currentText.topText}
                         </h1>
-                        <p className="mb-5 max-w-64 font-robert-regular text-blue-100 text-lg drop-shadow-md">
-                            Full Stack Developer
+                        {/* DYNAMIC TEXT: Subtitle text */}
+                        <p className="mb-5 max-w-64 font-robert-regular text-blue-100 text-lg drop-shadow-md hero-subtext">
+                            {currentText.subText}
                         </p>
                         <a href="#contact">
                             <Button
@@ -242,9 +269,9 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Shadow Text underneath the clip-path */}
+            {/* DYNAMIC TEXT: Shadow Text underneath the clip-path mask */}
             <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-                Develop<b>e</b>r
+                {currentText.bottomText}
             </h1>
         </div>
     );
