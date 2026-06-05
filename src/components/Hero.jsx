@@ -73,14 +73,19 @@ const HERO_CONTENT = {
         subText: "Full Stack Developer",
     },
     2: {
-        topText: <>Clo<b>u</b>d</>,
-        bottomText: <>Engine<b>e</b>r</>,
-        subText: "Cloud Solutions Architect",
-    },
-    3: {
         topText: <>Dev<b>O</b>ps</>,
         bottomText: <>Engine<b>e</b>r</>,
         subText: "CI/CD & Infrastructure Specialist",
+    },
+    3: {
+        topText: <>Da<b>T</b>A</>,
+        bottomText: <>Anysis<b>i</b>st</>,
+        subText: "Data-Driven Problem Solver",
+    },
+    4: {
+        topText: <>We<b>b</b></>,
+        bottomText: <>D<b>e</b>v</>,
+        subText: "Full Stack DevOps Engineer",
     },
 };
 
@@ -91,7 +96,7 @@ const Hero = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
 
-    const totalVideos = 3;
+    const totalVideos = 4;
 
     const currentVideoRef = useRef(null);
     const nextVideoRef = useRef(null);
@@ -137,7 +142,7 @@ const Hero = () => {
                     ease: "power1.inOut",
                     force3D: true,
                 });
-                
+
                 // OPTIONAL: Smooth text entry animation on change
                 gsap.from(".hero-heading, .hero-subtext", {
                     opacity: 0,
