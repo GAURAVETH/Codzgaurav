@@ -1,6 +1,7 @@
 import React from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import Form from "./Form";
+import HoverSoundLink from "./HoverSoundLink"; // Ensure this import is correct
 
 const Contact = () => {
   return (
@@ -30,12 +31,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-zinc-400">Call Me</p>
-                  <a
+                  <HoverSoundLink
+                    text="+91 8507980249"
                     href="tel:+918507980249"
                     className="text-lg font-semibold transition-colors hover:text-emerald-400"
-                  >
-                    +91 8507980249
-                  </a>
+                  />
                 </div>
               </div>
 
@@ -46,12 +46,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-zinc-400">Email Me</p>
-                  <a
+                  <HoverSoundLink
+                    text="gauravkreth@gmail.com"
                     href="mailto:gauravkreth@gmail.com"
                     className="text-lg font-semibold transition-colors hover:text-emerald-400"
-                  >
-                    gauravkreth@gmail.com
-                  </a>
+                  />
                 </div>
               </div>
 
@@ -62,14 +61,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-zinc-400">Location</p>
-                  <a
-                    href="https://maps.google.com/?q=Patna,Bihar,India"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <HoverSoundLink
+                    text="Patna, Bihar, India"
+                    href="https://maps.app.goo.gl/your-map-link-here"
                     className="text-lg font-semibold transition-colors hover:text-emerald-400"
-                  >
-                    Patna, Bihar, India
-                  </a>
+                  />
                 </div>
               </div>
             </div>
@@ -85,10 +81,7 @@ const Contact = () => {
               <h3 className="mb-8 text-2xl font-semibold text-white">
                 Send a Message
               </h3>
-
-              {/* Ensure your Form component renders inputs with dark mode styling (e.g., bg-zinc-800) */}
               <Form />
-
             </div>
           </div>
 

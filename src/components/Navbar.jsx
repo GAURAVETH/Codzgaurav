@@ -51,9 +51,9 @@ const Navbar = () => {
     // Play or Pause Audio
     useEffect(() => {
         if (isAudioPlaying) {
-            audioElementRef.current.play();
-        } else {
             audioElementRef.current.pause();
+        } else {
+            audioElementRef.current.play();
         }
     }, [isAudioPlaying]);
 
@@ -104,7 +104,7 @@ const Navbar = () => {
                             {[1, 2, 3].map((bar) => (
                                 <div
                                     key={bar}
-                                    className={`indicator-line ${isIndicatorActive ? '' : 'active'
+                                    className={`indicator-line ${isIndicatorActive ? 'active' : 'inactive'
                                         }`}
                                     style={{ animationDelay: `${bar * 0.1}s` }}
                                 />

@@ -261,42 +261,33 @@ const Projects = () => {
       {/* --- BEYOND THE CODE (HOBBIES) --- */}
       <section className="relative z-10 w-full bg-black px-5 py-20 md:px-10">
         <div className="mx-auto max-w-7xl">
-          <BentoTilt className="bento-tilt_1 h-[530px] rounded-3xl border border-zinc-800 bg-zinc-900/50 text-white md:col-span-1">
-            <div className="flex h-[500px] flex-col p-0">
-              <div className="flex flex-col items-center justify-center px-10 pt-10">
-                <div className="inline-flex items-center gap-2">
+          <BentoTilt className="h-[530px] bento-tilt_1 me-14 md:col-span-1 md:me-0 text-white">
+            <div className="p-0 h-[500px] flex flex-col ">
+              <div className="flex flex-col justify-center items-center px-10 pt-10 ">
+                <div className="inline-flex gap-2">
                   <PiStarFourFill className="size-9 text-emerald-300" />
-                  <h3 className="font-serif text-3xl font-bold">
-                    Beyond the Code
-                  </h3>
+                  <h3 className="font-serif text-3xl">Beyond the Code</h3>
                 </div>
-
-                <p className="mt-2 text-sm text-white/60">
-                  Explore my interests and hobbies beyond the digital realm
-                </p>
+                <p className="text-sm text-white/60 mt-2">Explore my interests and hobbies beyond the digital realm</p>
               </div>
-
-              <div className="relative flex-1 overflow-hidden">
-                {hobbies.map((hobby) => (
+              <div className="relative flex-1">
+                {hobbies.map(hobby => (
                   <motion.div
                     key={hobby.title}
-                    className="absolute inline-flex cursor-grab active:cursor-grabbing items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
+                    className="cursor-pointer inline-flex gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
                     }}
                     drag
-                    dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                    dragElastic={0.2}
                   >
-                    <span className="font-medium text-gray-950">
-                      {hobby.title}
-                    </span>
+                    <span className="font-medium text-gray-950">{hobby.title}</span>
                     <span>{hobby.emoji}</span>
                   </motion.div>
                 ))}
               </div>
             </div>
+
           </BentoTilt>
         </div>
       </section>

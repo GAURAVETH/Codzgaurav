@@ -54,7 +54,7 @@ const Form = () => {
                     <textarea
                         name="message" // ✅ Required for emailjs template
                         placeholder="Message"
-                        className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full text-black p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         rows="4"
                         required
                     ></textarea>
