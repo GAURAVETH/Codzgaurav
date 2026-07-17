@@ -32,8 +32,8 @@ const Contact = () => {
                 <div>
                   <p className="text-sm font-medium text-zinc-400">Call Me</p>
                   <HoverSoundLink
-                    text="+91 8507980249"
-                    href="tel:+918507980249"
+                    text="+91 7991190998"
+                    href="tel:+917991190998"
                     className="text-lg font-semibold transition-colors hover:text-emerald-400"
                   />
                 </div>
